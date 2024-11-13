@@ -176,7 +176,7 @@ div.desc {
           diproses.style.display = "none";
           imagePreview.src = result['imageElement'].src;
           results.innerHTML = `
-            `+result['predictionResult']['prediction'][0]['className']+` 
+            `+result['predictionResult']+` 
           `;
           loadModelTime.innerText = nsfwjsclass.loadModelTime;
           downloadModelTime.innerText = nsfwjsclass.downloadModelTime;
