@@ -173,9 +173,9 @@ div.desc {
       nsfwjsclass.makeMagicPrediction(domElement).then(function(result) {
         console.log('result', result);
         if (result !== false) {
-          diproses.style.display = "none";
+          if (result.predictionResult.prediction[0].className === "Netral, tidak mengandung pornografi") {
+            diproses.style.display = "none";
           imagePreview.src = result['imageElement'].src;
-          if (result['predictionResult']['prediction'][0]['className'] === "Netral, tidak mengandung pornografi") {
            results.innerHTML = 'Berhasil memasang profil'
           }
           /*results.innerHTML = `
