@@ -175,9 +175,12 @@ div.desc {
         if (result !== false) {
           diproses.style.display = "none";
           imagePreview.src = result['imageElement'].src;
-          results.innerHTML = `
-            `+result['predictionResult']+` 
-          `;
+          if (result['predictionResult']['prediction'][0]['className'] === "Netral, tidak mengandung pornografi") {
+           results.innerHTML = 'Berhasil memasang profil'
+          }
+          /*results.innerHTML = `
+            `+result['predictionResult']['prediction'][0]['className']+` 
+          `;*/
           loadModelTime.innerText = nsfwjsclass.loadModelTime;
           downloadModelTime.innerText = nsfwjsclass.downloadModelTime;
         } else {
