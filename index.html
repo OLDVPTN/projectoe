@@ -173,16 +173,16 @@ div.desc {
       nsfwjsclass.makeMagicPrediction(domElement).then(function(result) {
         console.log('result', result);
         if (result !== false) {
-          if (result.predictionResult.prediction[0].className === "Netral, tidak mengandung pornografi") {
+          if (result.NSFW_CLASSES === 2) {
             diproses.style.display = "none";
           imagePreview.src = result['imageElement'].src;
-           results.innerHTML = 'Berhasil memasang profil'
-          }
-          /*results.innerHTML = `
-            `+result['predictionResult']['prediction'][0]['className']+` 
-          `;*/
+          results.innerHTML = `
+            Profil berhasil terpasang
+          `;
           loadModelTime.innerText = nsfwjsclass.loadModelTime;
           downloadModelTime.innerText = nsfwjsclass.downloadModelTime;
+          }
+          
         } else {
           diproses.style.display = "none";
           results.innerHTML = 'Error';
