@@ -179,6 +179,16 @@ div.desc {
           results.innerHTML = 'Berhasil';
           loadModelTime.innerText = nsfwjsclass.loadModelTime;
           downloadModelTime.innerText = nsfwjsclass.downloadModelTime;
+          } else if (result['predictionResult']['prediction'][0]['className'] === "Hentai, mengandung unsur pornografi") {
+            diproses.style.display = "none";
+          results.innerHTML = 'Gagal memasang foto profil, dikarenakan foto yang kamu pasang mengandung unsur pornografi.';
+          loadModelTime.innerText = nsfwjsclass.loadModelTime;
+          downloadModelTime.innerText = nsfwjsclass.downloadModelTime;
+          } else if (result['predictionResult']['prediction'][0]['className'] === "Sexy, mengandung unsur pornografi") {
+            diproses.style.display = "none";
+          results.innerHTML = 'Gagal memasang foto profil, dikarenakan foto yang kamu pasang mengandung unsur pornografi.';
+          loadModelTime.innerText = nsfwjsclass.loadModelTime;
+          downloadModelTime.innerText = nsfwjsclass.downloadModelTime;
           }
         } else {
           diproses.style.display = "none";
