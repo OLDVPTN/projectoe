@@ -173,16 +173,13 @@ div.desc {
       nsfwjsclass.makeMagicPrediction(domElement).then(function(result) {
         console.log('result', result);
         if (result !== false) {
-          if (result.NSFW_CLASSES === 2) {
-            diproses.style.display = "none";
+          diproses.style.display = "none";
           imagePreview.src = result['imageElement'].src;
           results.innerHTML = `
-            Profil berhasil terpasang
+            `+result['predictionResult']['prediction'][0]['className']+` 
           `;
           loadModelTime.innerText = nsfwjsclass.loadModelTime;
           downloadModelTime.innerText = nsfwjsclass.downloadModelTime;
-          }
-          
         } else {
           diproses.style.display = "none";
           results.innerHTML = 'Error';
