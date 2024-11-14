@@ -176,7 +176,7 @@ div.desc {
           if (result['predictionResult']['prediction'][0]['className'] === "Netral, tidak mengandung unsur pornografi") {
     diproses.style.display = "none";
           imagePreview.src = result['imageElement'].src;
-          results.innerHTML = 'Berhasil';
+          results.innerHTML = 'Foto Profil Berhasil Terpasang';
           loadModelTime.innerText = nsfwjsclass.loadModelTime;
           downloadModelTime.innerText = nsfwjsclass.downloadModelTime;
           } else if (result['predictionResult']['prediction'][0]['className'] === "Hentai, mengandung unsur pornografi") {
@@ -185,6 +185,11 @@ div.desc {
           loadModelTime.innerText = nsfwjsclass.loadModelTime;
           downloadModelTime.innerText = nsfwjsclass.downloadModelTime;
           } else if (result['predictionResult']['prediction'][0]['className'] === "Sexy, mengandung unsur pornografi") {
+            diproses.style.display = "none";
+          results.innerHTML = 'Gagal memasang foto profil, dikarenakan foto yang kamu pasang mengandung unsur pornografi.';
+          loadModelTime.innerText = nsfwjsclass.loadModelTime;
+          downloadModelTime.innerText = nsfwjsclass.downloadModelTime;
+           } else if (result['predictionResult']['prediction'][0]['className'] === "Mengandung unsur pornografi") {
             diproses.style.display = "none";
           results.innerHTML = 'Gagal memasang foto profil, dikarenakan foto yang kamu pasang mengandung unsur pornografi.';
           loadModelTime.innerText = nsfwjsclass.loadModelTime;
